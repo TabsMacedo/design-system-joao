@@ -1,0 +1,51 @@
+/* Hamburgueria do Roman — CSS simples */
+:root {
+  --marrom: #3E2722;
+  --amarelo: #FFCB00;
+  --queijo: #FFDF5A;
+  --creme: #FFF8ED;
+  --branco: #FFFFFF;
+}
+
+/* Base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--marrom);
+  font: 16px/1.5 Arial, sans-serif;
+}
+h1, h2, h3 { line-height: 1.2; }
+a { color: inherit; }
+.container { width: min(1100px, 90%); margin: auto; }
+
+/* Cabeçalho */
+.cabecalho { background: var(--marrom); color: var(--branco); padding: 20px 0; }
+.marca { color: var(--amarelo); font-size: 24px; font-weight: bold; }
+
+/* Botões */
+.botao {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--amarelo);
+  color: var(--marrom);
+  border: 0;
+  border-radius: 30px;
+  font: bold 16px Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover { background: var(--queijo); }
+.botao-secundario { background: var(--marrom); color: var(--branco); }
+.botao-secundario:hover { background: #594039; }
+
+/* Produtos e formulários */
+.produtos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { background: var(--branco); padding: 24px; border-radius: 16px; }
+.etiqueta { background: var(--queijo); padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; }
+.campo { width: 100%; padding: 12px; border: 1px solid #C9B5AA; border-radius: 8px; font: inherit; }
+.campo:focus-visible, .botao:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+
+@media (max-width: 700px) {
+  .produtos { grid-template-columns: 1fr; }
+}
